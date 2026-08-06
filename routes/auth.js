@@ -30,3 +30,33 @@ router.post('/login', async (req, res) => {
 });
 
 module.exports = router;
+// REGISTER
+router.post('/register', async (req, res) => {
+  try {
+    const { name, email, password } = req.body;
+
+    // 1. Vérifier si l'email existe déjà
+    const existingUser = await User.findOne({ email });
+    if (existingUser) return res.status(400).json({ message: 'Cet email est déjà utilisé' });
+
+    // 2. Hasher le mot de passe
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    // 3. Créer l'user
+    const newUser = new User({
+      name,
+      email,
+      password: hashedPassword
+    });
+
+    const savedUser = await newUser.save();
+
+    res.status(201).json({ 
+      message: 'Compte créé avec succès',
+      user: { id: savedUser._id, name: savedUser.name, email: savedUser.email }
+    });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
