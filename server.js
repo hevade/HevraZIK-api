@@ -59,3 +59,5 @@ app.post('/api/auth/login', async (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on ${PORT}`));
+const songRoutes = require('./routes/songs');
+app.use('/api/songs', songRoutes);
