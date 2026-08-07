@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HevraZik Player</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="background:#000; color:white; font-family:sans-serif; padding:20px; text-align:center;">
+
+  <h1>🎵 HEVRAZIK</h1>
+
+  <div style="background:#111; padding:20px; border-radius:15px; margin:20px 0;">
+    <h3>Icicabosse</h3>
+    <audio controls style="width:100%">
+      <source src="https://res.cloudinary.com/nojjbf4f/video/upload/v1786101027/Icicabosse.m4a" type="audio/mp4">
+    </audio>
+  </div>
+
+  <div style="background:#111; padding:20px; border-radius:15px; margin:20px 0;">
+    <h3>nik717dlabel</h3>
+    <audio controls style="width:100%">
+      <source src="https://res.cloudinary.com/nojjbf4f/video/upload/v1786101018/nik717dlabel.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+</body>
+</html>
